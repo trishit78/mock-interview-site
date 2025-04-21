@@ -5,6 +5,8 @@ import AuthLayout from "./layouts/auth-layout"
 
 import SignInPage from "./routes/sign-in"
 import SignUpPage from "./routes/sign-up"
+import ProtectedRoutes from "./layouts/protected-routes"
+import MainLayout from "./layouts/main-layout"
 
 const App = ()=> {
   return (
@@ -23,6 +25,12 @@ const App = ()=> {
         </Route>
 
         {/**private route */}
+        <Route  element={<ProtectedRoutes><MainLayout/></ProtectedRoutes>}>
+        
+        {/** add all the  protected routes */}
+        
+        </Route>
+      
       </Routes>
     </Router>
   )
