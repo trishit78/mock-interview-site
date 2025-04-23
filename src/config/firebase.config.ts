@@ -1,5 +1,5 @@
 import { initializeApp,getApps,getApp } from "firebase/app"; 
-import {getFirestore,enableNetwork,disableNetwork } from "firebase/firestore";
+import {getFirestore,enableNetwork } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey:import.meta.env.VITE_FIREBASE_API_KEY,
@@ -14,7 +14,7 @@ console.log(import.meta.env.VITE_FIREBASE_API_KEY)
 const app = getApps.length > 0 ? getApp() :initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
-await disableNetwork(db); 
+
 await enableNetwork(db);
 
 export {db};
